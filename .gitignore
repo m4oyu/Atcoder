@@ -33,3 +33,4 @@
 
 # atcorder
 ac-library/
+*.in
