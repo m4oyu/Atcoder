@@ -2,17 +2,13 @@
     "configurations": [
       {
         "name": "WSL",
-        "includePath": [
-          "${workspaceFolder}/**",
-          "/usr/include/**",
-          "/home/m4oyu/Atcorder/ac-library/"
-        ],
-        "defines": ["_DEBUG", "UNICODE", "_UNICODE"],
-        "compilerPath": "/usr/bin/gcc-9",
+        "intelliSenseMode": "gcc-x64",
+        "compilerPath": "/usr/bin/gcc",
+        "includePath": ["${workspaceFolder}/**"],
+        "defines": [],
         "cStandard": "c11",
-        "cppStandard": "c++17",
-        "intelliSenseMode": "gcc-x64"
+        "cppStandard": "c++17"
       }
     ],
     "version": 4
-  }
+}
