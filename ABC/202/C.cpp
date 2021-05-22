@@ -4,9 +4,9 @@ using namespace std;
 int main() {
       int n;
       cin >> n;
-      map<int, int> a;
-      vector<int> b(n);
-      map<int, int> bc;
+      map<int, int64_t> a;
+      vector<int> b(n+1);
+      map<int, int64_t> bc;
       int ai;
 
 
@@ -19,7 +19,7 @@ int main() {
                   a[ai] = 1;
             }
       }
-      for (int i = 0; i < n; i++)
+      for (int i = 1; i < n+1; i++)
       {
             cin>>b[i];
       }
@@ -27,7 +27,6 @@ int main() {
       {
             int ci;
             cin>>ci;
-            ci--;
             if(bc.count(b[ci])){
                   bc[b[ci]] = bc.at(b[ci]) + 1;
             } else {
@@ -36,7 +35,8 @@ int main() {
       }
 
 
-      int64_t count = 0;
+      long long count = 0;
+
       for (auto p : a) {
             auto key = p.first;
             auto value = p.second;
