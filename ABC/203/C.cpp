@@ -1,42 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-string incr(string s) {
-    while
-    
-}
+#define rep(i,n) for (int i = 0; i< (n) ; ++i)
+using ll = long long;
 
 int main() {
     int n;
-    long long k;
-    cin >> n>>k;
+    ll k;
+    cin >> n >> k;
+    vector<pair<ll, int>> fr(n);
 
-    string ans = "0";
-
-
-    vector<unsigned int> moneyPerVillage(1000000000000000005);
-    long long ai, bi;
-    for (int i = 0; i < n; i++)
-    {
-        cin >> ai>>bi;
-        moneyPerVillage[ai] += bi;    
+    rep(i, n) {
+        cin >> fr[i].first >> fr[i].second;
     }
+    sort(fr.begin(), fr.end());
 
-    long long ans = 0;
-
-    for (unsigned long long i = 0; i < count; i++)
-    {
-        /* code */
+    ll ans = k;
+    int j = 0;
+    while(j < n && fr[j].first <= ans) {
+        ans += fr[j].second;
+        j++;
     }
-    
-
-    while (k == 0)
-    {
-        k += moneyPerVillage[ans];
-        ans++;
-        k--;
-    }
-    
     cout << ans << endl;
     return 0;
 }
