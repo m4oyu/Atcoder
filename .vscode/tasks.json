@@ -1,27 +1,29 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"type": "shell",
-			"label": "g++ build active file",
-			"command": "/usr/bin/g++",
-			"args": [
-				"-std=gnu++1y",
-				"-g",
-				"-O0",
-				"-I/opt/boost/gcc/include",
-				"-L/opt/boost/gcc/lib",
-				"${file}",
-				"-o",
-				"${workspaceFolder}/problem.out"
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "/usr/bin/g++-9",
+            "args": [
+				"-std=gnu++17",
+                "-Wall",
+                "-Wextra",
+                "-Wshadow",
+                "-Wconversion",
+                "-fsanitize=undefined",
+                "-ggdb",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
 			],
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": {
-				"kind": "build",
-				"isDefault": true
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
 			}
-		}
-	]
+        }
+    ]
 }
