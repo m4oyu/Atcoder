@@ -6,7 +6,7 @@
             "type": "shell",
             "command": "/usr/bin/g++-9",
             "args": [
-				"-std=gnu++17",
+                "-std=gnu++17",
                 "-Wall",
                 "-Wextra",
                 "-Wshadow",
@@ -15,15 +15,15 @@
                 "-ggdb",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
-			],
+                "${workspaceFolder}/problem.out"
+            ],
             "problemMatcher": [
                 "$gcc"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
-			}
+            }
         }
     ]
 }
