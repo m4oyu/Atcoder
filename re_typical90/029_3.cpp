@@ -35,6 +35,14 @@ public:
             lazy[k] = 0;
         }
     }
+
+    void update()
+    {
+    }
+
+    int max_segment(int l, int r)
+    {
+    }
 };
 
 int w, n;
