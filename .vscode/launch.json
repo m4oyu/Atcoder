@@ -4,13 +4,13 @@
             "name": "C/C++: g++-9 build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "program": "${workspaceFolder}/problem.out",
             "args": [
                 "<",
                 "${workspaceFolder}/problem.in"
             ],
             "stopAtEntry": true,
-            "cwd": "${fileDirname}",
+            "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",

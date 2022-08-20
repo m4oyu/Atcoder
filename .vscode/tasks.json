@@ -31,7 +31,7 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${workspaceFolder}/problem.out"
             ],
             "options": {
                 "cwd": "${fileDirname}"
