@@ -35,6 +35,12 @@ clang-format -dump-config -style=Google > .clang-format
 - 左クリック→format with..で選択
 - 設定よりdefault formatterを選択
 
+### debug
+```
+sudo apt install gdb -y
+```
+
+
 ### Atcorder Library
 以下はAtcorderLibraryの関連ファイル・フォルダ
 
