@@ -20,6 +20,21 @@ F5 → debug \
 [Variables Reference](https://code.visualstudio.com/docs/editor/variables-reference)\
 [WSL2とVSCodeでC++環境構築した](https://ntk-ta01.hatenablog.com/entry/2020/09/09/181155)
 
+```
+sudo apt update
+sudo apt upgrade
+sudo apt install gcc-9 g++-9
+```
+
+### clang-format install and config
+vscodeの拡張機能からはうまく動作しなかったため
+```
+sudo apt install clang-format
+clang-format -dump-config -style=Google > .clang-format
+```
+- 左クリック→format with..で選択
+- 設定よりdefault formatterを選択
+
 ### Atcorder Library
 以下はAtcorderLibraryの関連ファイル・フォルダ
 
