@@ -22,4 +22,7 @@
       "[cpp]": {
             "editor.defaultFormatter": "xaver.clang-format"
       },
+      "[go]": {
+            "editor.defaultFormatter": "golang.go"
+      },
 }

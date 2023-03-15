@@ -34,3 +34,4 @@
 # atcorder
 ac-library/
 *.in
+__debug_bin
