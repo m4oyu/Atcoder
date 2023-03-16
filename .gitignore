@@ -34,4 +34,7 @@
 # atcorder
 ac-library/
 *.in
+
+# go
 __debug_bin
+main.go
