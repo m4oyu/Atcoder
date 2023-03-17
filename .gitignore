@@ -38,3 +38,4 @@ ac-library/
 # go
 __debug_bin
 main.go
+main
