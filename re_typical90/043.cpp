@@ -1,89 +1,42 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define rep(i, n) for (int i = 0; i < (n); ++i)
 using ll = long long;
+    
+vector<vector<char>> m(1001, vector<char>(1001, 'n'));
+vector<vector<vector<int>>> c(1001, vector<vector<int>>(1001, vector<int>(4, -1)));
+pair<int, int> vec[4] = {{0, 1}, {-1, 0}, {0, -1}, {1, 0}};
 
-int dir[4][2] = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
-int dist[1009][1009][4];
-char maze[1009][1009];
+void solve(int row, int col, int dir) {
+    if (m[row][col] == 'n') {
+        return;
+    } 
 
-struct state
-{
-    int r, c, d;
-};
-
-int main()
-{
-    int h, w;
-    int rs, cs, rt, ct;
-    cin >> h >> w;
-    cin >> rs >> cs;
-    cin >> rt >> ct;
-
-    rs--;
-    cs--;
-    rt--;
-    ct--;
-
-    for (int i = 0; i < h; i++)
-    {
-        cin >> maze[i];
-    }
-
-    for (int i = 0; i < h; ++i)
-    {
-        for (int j = 0; j < w; ++j)
-        {
-            dist[i][j][0] = INT_MAX;
-            dist[i][j][1] = INT_MAX;
-            dist[i][j][2] = INT_MAX;
-            dist[i][j][3] = INT_MAX;
-        }
-    }
-
-    queue<state> q;
     for (int i = 0; i < 4; i++)
     {
-        dist[rs][cs][i] = 0;
-        q.push({rs, cs, i});
-    }
-
-    while (!q.empty())
-    {
-        state s = q.front();
-        q.pop();
-
-        for (int i = 0; i < 4; i++)
-        {
-            int next_r = s.r + dir[i][0], next_c = s.c + dir[i][1];
-            if (next_r < 0 || h <= next_r || next_c < 0 || w <= next_c || maze[next_r][next_c] == '#')
-            {
-                continue;
-            }
-
-            if (dist[s.r][s.c][s.d] >= dist[next_r][next_c][i])
-            {
-                continue;
-            }
-
-            if (s.d == i)
-            {
-                dist[next_r][next_c][i] = dist[s.r][s.c][s.d];
-                q.push({next_r, next_c, i});
-            }
-            else
-            {
-                dist[next_r][next_c][i] = dist[s.r][s.c][s.d] + 1;
-                q.push({next_r, next_c, i});
-            }
+        if (c[row][col][i] == -1) {
+            
         }
     }
+        
+    
+   
+}
 
-    int answer = INT_MAX;
-    for (int i = 0; i < 4; ++i)
+
+int main() {
+    int h, w, rs, cs, rt, ct;
+    cin >> h >> w >> rs >> cs >> rt >> ct;
+    for (int i = 1; i <= h; i++)
     {
-        answer = min(answer, dist[rt][ct][i]);
+        for (int j = 1; j <= w; j++)
+        {
+            cin >> m[i][j];
+        }
     }
-    cout << answer << endl;
+    
+
+
+
+
     return 0;
 }
