@@ -42,7 +42,7 @@ int main() {
             if ((c == 'a' || c == 't' || c == 'c' || c == 'o' || c == 'd' ||
                  c == 'e' || c == 'r') &&
                 0 < wc_s) {
-                wc_s -= x;
+                wc_s += x;
             } else {
                 cout << "No" << endl;
                 return 0;
@@ -57,6 +57,11 @@ int main() {
                 return 0;
             }
         }
+    }
+
+    if (wc_s < 0 || wc_t < 0 || wc_s != wc_t) {
+        cout << "No" << endl;
+        return 0;
     }
 
     cout << "Yes" << endl;

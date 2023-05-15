@@ -13,29 +13,21 @@ int main() {
         pow_of_2.push_back(power);
     }
 
-    ll smax = 0, smin = 0;
+    ll smin = 0;
     for (int i = 1; i <= s.size(); i++) {
-        if (s[s.size() - i] == '?') {
-            smax += pow_of_2[i - 1];
-        }
         if (s[s.size() - i] == '1') {
-            smax += pow_of_2[i - 1];
             smin += pow_of_2[i - 1];
         }
     }
 
-    if (smin > n) {
+    if (n < smin) {
         cout << -1 << endl;
         return 0;
-    }
-
-    if (smax <= n) {
-        cout << smax << endl;
-    } else if (smax > n) {
+    } else {
         ll sum = smin;
         for (int i = 1; i <= s.size(); i++) {
-            if (sum + pow_of_2[i - 1] <= n && s[s.size() - i] == '?') {
-                sum += pow_of_2[i - 1];
+            if (sum + pow_of_2[s.size() - i] <= n && s[i - 1] == '?') {
+                sum += pow_of_2[s.size() - i];
             }
         }
         cout << sum << endl;
