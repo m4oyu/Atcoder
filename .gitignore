@@ -39,3 +39,6 @@ ac-library/
 __debug_bin
 main.go
 main
+
+code_test/
+.vscode/
