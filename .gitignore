@@ -32,16 +32,8 @@
 *.app
 
 # vscode settings
-.vscode/settings.json
+.vscode/
 
 # atcorder
 ac-library/
 *.in
-
-# go
-__debug_bin
-main.go
-main
-
-code_test/
-.vscode/
