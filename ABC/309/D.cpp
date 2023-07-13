@@ -3,27 +3,34 @@ using namespace std;
 using ll = long long;
 
 vector<vector<int>> path(150001);
-vector<int> g(150001, 150001);
 
-int count(int a, int tmp) {
-    int ret = tmp;
-    for (auto &&i : path[a])
-    {
-        if (g[i] > g[a]) {
-            g[i] = max(g[i], g[a]);
-            ret = max(g[i], ret);
-            count(i, tmp);
+int solve(int start, int end) {
+    vector<int> dist(150001, -1);
+
+    queue<int> q;
+    q.push(start);
+
+    while (!q.empty()) {
+        int a = q.front();
+        q.pop();
+
+        for (auto &&i : path[a]) {
+            if (dist[i] == -1) {
+                q.push(i);
+            }
+            // -1 との対処
+            dist[i] = min(dist[i], dist[a] + 1);
         }
     }
-    return ret;
+
+    return *max_element(&dist[start], &dist[end]);
 }
 
 int main() {
     int n1, n2, m;
     cin >> n1 >> n2 >> m;
 
-    for (int i = 0; i < m; i++)
-    {
+    for (int i = 0; i < m; i++) {
         int a, b;
         cin >> a >> b;
 
@@ -31,11 +38,8 @@ int main() {
         path[b].push_back(a);
     }
 
-    g[1] = 0, g[n1+n2] = 0;
-
-
-    int maxn1 = count(1, 0);
-    int maxn2 = count(n1+n2, 0);
+    int maxn1 = solve(1, n1);
+    int maxn2 = solve(n1 + n2, n1 + 1);
 
     cout << maxn1 + maxn2 + 1 << endl;
 }
